@@ -6,7 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f9ffda6-1e5e-4b8a-adae-b8fd01c667d4" name="Default Changelist" comment="" />
+    <list default="true" id="6f9ffda6-1e5e-4b8a-adae-b8fd01c667d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/spark/example/FlightsDataProcess.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/spark/example/RetailDataProcess.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/spark/example/S3IOTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SparkSimpleApp_jar/SparkSimpleApp.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/spark/example/App.scala" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +23,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,6 +46,9 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Xh9VUHO7NkXskxWFYGk9BmZaKA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -37,15 +56,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../awskinesisjava/awskinesisapp" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
-  <component name="RunManager" selected="Application.WasbIOTest">
-    <configuration name="ScalaTest" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.spark.example.ScalaTest" />
+  <component name="RunManager" selected="Application.ProducerAppKPL">
+    <configuration name="FlightsDataProcess" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.spark.example.FlightsDataProcess" />
       <module name="SparkSimpleApp" />
+      <shortenClasspath name="MANIFEST" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.spark.example.*" />
@@ -56,15 +77,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WasbIOTest" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.spark.example.WasbIOTest" />
+    <configuration name="ProducerAppKPL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.aws.kinesisapps.ProducerAppKPL" />
       <module name="SparkSimpleApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aws.kinesisapps.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RetailDataProcess" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.spark.example.RetailDataProcess" />
+      <module name="SparkSimpleApp" />
+      <shortenClasspath name="MANIFEST" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.spark.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="S3IOTest" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.spark.example.S3IOTest" />
+      <module name="SparkSimpleApp" />
+      <shortenClasspath name="MANIFEST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spark.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -85,10 +140,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.S3IOTest" />
+      <item itemvalue="Application.FlightsDataProcess" />
+      <item itemvalue="Application.RetailDataProcess" />
+      <item itemvalue="Application.ProducerAppKPL" />
+      <item itemvalue="JUnit.AppTest.testOK" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WasbIOTest" />
-        <item itemvalue="Application.ScalaTest" />
+        <item itemvalue="Application.ProducerAppKPL" />
+        <item itemvalue="Application.S3IOTest" />
+        <item itemvalue="Application.RetailDataProcess" />
+        <item itemvalue="Application.FlightsDataProcess" />
         <item itemvalue="JUnit.AppTest.testOK" />
       </list>
     </recent_temporary>
@@ -107,29 +171,73 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="530" y="203" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1581488106474">
+    <state x="453" y="54" key="#&lt;template&gt;_of_Application" timestamp="1588096746307">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="530" y="203" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1581488106474" />
-    <state width="1342" height="195" key="GridCell.Tab.0.bottom" timestamp="1581913361750">
+    <state x="453" y="54" key="#&lt;template&gt;_of_Application/0.0.1536.824@0.0.1536.824" timestamp="1588096746307" />
+    <state x="472" y="138" key="#FlightsDataProcess" timestamp="1588096764400">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581913361750" />
-    <state width="1342" height="195" key="GridCell.Tab.0.center" timestamp="1581913361750">
+    <state x="472" y="138" key="#FlightsDataProcess/0.0.1536.824@0.0.1536.824" timestamp="1588096764400" />
+    <state x="485" y="73" key="#ProducerAppKPL" timestamp="1590509156273">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581913361750" />
-    <state width="1342" height="195" key="GridCell.Tab.0.left" timestamp="1581913361750">
+    <state x="485" y="73" key="#ProducerAppKPL/0.0.1536.824@0.0.1536.824" timestamp="1590509156273" />
+    <state x="472" y="138" key="#RetailDataProcess" timestamp="1588148222609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581913361750" />
-    <state width="1342" height="195" key="GridCell.Tab.0.right" timestamp="1581913361750">
+    <state x="472" y="138" key="#RetailDataProcess/0.0.1536.824@0.0.1536.824" timestamp="1588148222609" />
+    <state x="495" y="93" key="#S3IOTest" timestamp="1587981529118">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581913361750" />
-    <state x="279" y="0" key="SettingsEditor" timestamp="1581488294916">
+    <state x="495" y="93" key="#S3IOTest/0.0.1536.824@0.0.1536.824" timestamp="1587981529118" />
+    <state x="223" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587990240185">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="279" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1581488294916" />
+    <state x="223" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587990240185" />
+    <state x="533" y="333" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog" timestamp="1587974248407">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="533" y="333" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.0.1536.824@0.0.1536.824" timestamp="1587974248407" />
+    <state x="567" y="111" key="#com.intellij.ide.util.MemberChooser" timestamp="1590503648885">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="567" y="111" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590503648885" />
+    <state x="530" y="203" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587997415499">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="530" y="203" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1587997415499" />
+    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1590509798336">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590509798336" />
+    <state width="1342" height="497" key="GridCell.Tab.0.bottom" timestamp="1590510479519">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="497" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590510479519" />
+    <state width="1342" height="497" key="GridCell.Tab.0.center" timestamp="1590510479519">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="497" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590510479519" />
+    <state width="1342" height="497" key="GridCell.Tab.0.left" timestamp="1590510479519">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="497" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590510479519" />
+    <state width="1342" height="497" key="GridCell.Tab.0.right" timestamp="1590510479519">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="497" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590510479519" />
+    <state x="292" y="50" key="Maven.ArtifactSearchDialog" timestamp="1590489866176">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="292" y="50" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1590489866176" />
+    <state x="275" y="0" key="SettingsEditor" timestamp="1588012735935">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="275" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588012735935" />
+    <state x="209" y="140" key="new project wizard" timestamp="1590509697560">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="140" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1590509697560" />
   </component>
 </project>

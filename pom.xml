@@ -5,10 +5,10 @@
   <version>1.0-SNAPSHOT</version>
   <inceptionYear>2008</inceptionYear>
   <properties>
-    <scala.version>2.11.8</scala.version>
-    <scala.compat.version>2.11.8</scala.compat.version>
-    <scala.binary.version>2.11</scala.binary.version>
-    <spark.version>2.4.4</spark.version>
+    <scala.version>2.11</scala.version>
+    <scala.compat.version>2.12</scala.compat.version>
+    <scala.binary.version>2.12</scala.binary.version>
+    <spark.version>3.0.0</spark.version>
   </properties>
 
   <repositories>
@@ -31,36 +31,77 @@
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
-      <version>${scala.version}</version>
+      <version>${scala.compat.version}</version>
     </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.4</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>org.specs</groupId>
       <artifactId>specs</artifactId>
       <version>1.2.5</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-project -->
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-project</artifactId>
+      <version>3.2.1</version>
+      <type>pom</type>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-mapreduce-client-core -->
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-mapreduce-client-core</artifactId>
+      <version>3.2.1</version>
+    </dependency>
+
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-core_${scala.binary.version}</artifactId>
       <version>${spark.version}</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common -->
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-common</artifactId>
+      <version>3.2.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk</artifactId>
+      <version>1.11.327</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws -->
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-aws</artifactId>
+      <version>3.2.1</version>
+    </dependency>
+
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-streaming_${scala.binary.version}</artifactId>
       <version>${spark.version}</version>
     </dependency>
+
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-sql_${scala.binary.version}</artifactId>
       <version>${spark.version}</version>
 <!--      <scope>compile</scope>-->
     </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-mllib_2.11 -->
     <dependency>
       <groupId>org.apache.spark</groupId>
@@ -68,12 +109,19 @@
       <version>${spark.version}</version>
 <!--      <scope>compile</scope>-->
     </dependency>
-    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-<!--    <dependency>-->
-<!--      <groupId>mysql</groupId>-->
-<!--      <artifactId>mysql-connector-java</artifactId>-->
-<!--      <version>5.1.42</version>-->
-<!--    </dependency>-->
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.6.7</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpcore</artifactId>
+      <version>4.4-beta1</version>
+    </dependency>
+
   </dependencies>
   <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
@@ -97,23 +145,6 @@
           </args>
         </configuration>
       </plugin>
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-eclipse-plugin</artifactId>-->
-<!--        <configuration>-->
-<!--          <downloadSources>true</downloadSources>-->
-<!--          <buildcommands>-->
-<!--            <buildcommand>ch.epfl.lamp.sdt.core.scalabuilder</buildcommand>-->
-<!--          </buildcommands>-->
-<!--          <additionalProjectnatures>-->
-<!--            <projectnature>ch.epfl.lamp.sdt.core.scalanature</projectnature>-->
-<!--          </additionalProjectnatures>-->
-<!--          <classpathContainers>-->
-<!--            <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>-->
-<!--            <classpathContainer>ch.epfl.lamp.sdt.launching.SCALA_CONTAINER</classpathContainer>-->
-<!--          </classpathContainers>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
     </plugins>
   </build>
   <reporting>

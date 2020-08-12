@@ -1,3 +1,5 @@
 .idea
 SparkSimpleApp.iml
 out
+target
+src\main\scala\META-INF
