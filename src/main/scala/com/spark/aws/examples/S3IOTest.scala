@@ -1,10 +1,7 @@
-package com.spark.example
+package com.spark.aws.examples
 
-import org.apache.spark.SparkConf
-import org.apache.spark.SparkContext
-import org.apache.spark.sql._
+import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.SparkSession
-import org.apache.log4j.{Logger,Level}
 
 object S3IOTest {
   def main (arg: Array[String]): Unit = {
@@ -25,7 +22,6 @@ object S3IOTest {
     println(s"spark session create: $spark")
     println("****************************")
     val data = spark.read.option("header",true).option("inferschema",true).csv("s3a://examplelake/sparkinput/*.csv")
-//    val data = spark.read.option("header",true).option("inferschema",true).csv("C:\\Users\\Dheemanth Garikipati\\Desktop\\data\\retail-data\\by-day\\2010-12-01.csv")
     data.show(5)
     data.createOrReplaceTempView("flights")
     spark.sql("select * from flights limit 10").show()
