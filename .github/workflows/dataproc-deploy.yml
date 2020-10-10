@@ -33,7 +33,8 @@ jobs:
         restore-keys: ${{ runner.os }}-m2  
     - name: Build with Maven
       run: mvn -B package -Dmaven.test.skip=true --file pom.xml
-    - run: mkdir staging && cp target/*.jar staging && move staging/*.jar staging/artifact.jar
+    - name: copy the jar to staging folder
+      run: mkdir staging && cp target/*.jar staging && move staging/*.jar staging/artifact.jar
     - name: Setup google cloud sdk
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
@@ -41,5 +42,7 @@ jobs:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         export_default_credentials: true
-    - run: gsutil cp staging/*.jar gs://dp-artifacts/
-    - run: gcloud dataproc jobs submit spark --cluster ${{ github.event.inputs.cluster }} --class ${{ github.event.inputs.class }} --jar staging/*.jar -- ${{ github.event.inputs.args }}
+    - name : copy the artifact to cloud storage
+      run: gsutil cp staging/*.jar gs://dp-artifacts/
+    - name: submit the job to dataproc cluster
+      run: gcloud dataproc jobs submit spark --cluster ${{ github.event.inputs.cluster }} --class ${{ github.event.inputs.class }} --jar staging/*.jar -- ${{ github.event.inputs.args }}
