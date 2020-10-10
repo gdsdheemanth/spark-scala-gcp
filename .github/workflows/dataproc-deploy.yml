@@ -1,10 +1,18 @@
-name: gcp-deploy
-
+name: dataproc-deploy
 
 on:
   workflow_dispatch:
-
-
+    inputs:
+      cluster:
+        description: 'Cluster Name'     
+        required: true
+      class:
+        description: 'Class Path'     
+        required: true
+      args:
+        description: 'Arguments'     
+        required: true
+      
 jobs:
   
   Deploy:
@@ -25,7 +33,7 @@ jobs:
         restore-keys: ${{ runner.os }}-m2  
     - name: Build with Maven
       run: mvn -B package -Dmaven.test.skip=true --file pom.xml
-    - run: mkdir staging && cp target/*.jar staging
+    - run: mkdir staging && cp target/*.jar staging && move staging/*.jar staging/artifact.jar
     - name: Setup google cloud sdk
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
@@ -33,4 +41,5 @@ jobs:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         export_default_credentials: true
-    - run: gcloud info
+    - run: gsutil cp staging/*.jar gs://dp-artifacts/
+    - run: gcloud dataproc jobs submit spark --cluster ${{ github.event.inputs.cluster }} --class ${{ github.event.inputs.class }} --jar staging/*.jar -- ${{ github.event.inputs.args }}
