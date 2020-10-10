@@ -1,4 +1,4 @@
-package com.spark.example
+package com.spark.examples
 
 import org.junit._
 import Assert._
