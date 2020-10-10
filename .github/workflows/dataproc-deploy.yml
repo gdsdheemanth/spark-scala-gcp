@@ -6,6 +6,9 @@ on:
       cluster:
         description: 'Cluster Name'     
         required: true
+      region:
+        description: 'Dataproc Region'     
+        required: true
       class:
         description: 'Class Path'     
         required: true
@@ -45,4 +48,4 @@ jobs:
     - name : copy the artifact to cloud storage
       run: gsutil cp staging/*.jar gs://dp-artifacts/
     - name: submit the job to dataproc cluster
-      run: gcloud dataproc jobs submit spark --cluster ${{ github.event.inputs.cluster }} --class ${{ github.event.inputs.class }} --jar staging/*.jar -- ${{ github.event.inputs.args }}
+      run: gcloud dataproc jobs submit spark --cluster=${{ github.event.inputs.cluster }} --region=${{ github.event.inputs.region }} --class=${{ github.event.inputs.class }} --jars=staging/*.jar -- ${{ github.event.inputs.args }}
