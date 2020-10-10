@@ -34,7 +34,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package -Dmaven.test.skip=true --file pom.xml
     - name: copy the jar to staging folder
-      run: mkdir staging && cp target/*.jar staging && move staging/*.jar staging/artifact.jar
+      run: mkdir staging && cp target/*.jar staging && mv staging/*.jar staging/artifact.jar
     - name: Setup google cloud sdk
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
